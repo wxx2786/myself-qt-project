@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>assert/bk.png</file>
+        <file>assert/nextSong.png</file>
+        <file>assert/openDir.png</file>
+        <file>assert/pause.png</file>
+        <file>assert/playing.png</file>
+        <file>assert/playlist_order.png</file>
+        <file>assert/playlist_random.png</file>
+        <file>assert/playlist_repeat.png</file>
+        <file>assert/playlist-repeatOnce.png</file>
+        <file>assert/prevSong.png</file>
+        <file>assert/volume.png</file>
+    </qresource>
+</RCC>

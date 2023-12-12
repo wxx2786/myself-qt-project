@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>324</width>
+    <height>463</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>32</width>
+    <height>32</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Widget</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{
+border:none;
+}
+
+QPushButton:hover
+{
+	background-color: rgb(148, 255, 239);
+}</string>
+  </property>
+  <widget class="QWidget" name="widget_2" native="true">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>400</y>
+     <width>256</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>256</width>
+     <height>256</height>
+    </size>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QPushButton" name="pushButton_7">
+      <property name="minimumSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-image: url(:/assert/openDir.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_8">
+      <property name="minimumSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">icon: url(:/assert/playlist_order.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_9">
+      <property name="minimumSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">icon: url(:/assert/prevSong.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_10">
+      <property name="minimumSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">icon: url(:/assert/pause.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_11">
+      <property name="minimumSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">icon: url(:/assert/nextSong.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButton_12">
+      <property name="minimumSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">icon: url(:/assert/volume.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QListWidget" name="listWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>30</y>
+     <width>301</width>
+     <height>301</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QSlider" name="playCourseSlider">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>370</y>
+     <width>251</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QSlider" name="volumeSlider">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>360</y>
+     <width>22</width>
+     <height>58</height>
+    </rect>
+   </property>
+   <property name="maximum">
+    <number>100</number>
+   </property>
+   <property name="pageStep">
+    <number>0</number>
+   </property>
+   <property name="value">
+    <number>0</number>
+   </property>
+   <property name="sliderPosition">
+    <number>0</number>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>350</y>
+     <width>171</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QLabel" name="curLabel">
+      <property name="text">
+       <string>00:00</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>48</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QLabel" name="totalLabel">
+      <property name="text">
+       <string>00:00</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
