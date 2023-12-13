@@ -33,9 +33,9 @@ QPushButton:hover
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>400</y>
+     <y>399</y>
      <width>256</width>
-     <height>50</height>
+     <height>51</height>
     </rect>
    </property>
    <property name="maximumSize">
@@ -60,7 +60,8 @@ QPushButton:hover
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-image: url(:/assert/openDir.png);</string>
+       <string notr="true">icon: url(:/assert/openDir.png);
+</string>
       </property>
       <property name="text">
        <string/>
@@ -198,6 +199,9 @@ QPushButton:hover
      <height>22</height>
     </rect>
    </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
    </property>
@@ -208,8 +212,8 @@ QPushButton:hover
    </property>
    <property name="geometry">
     <rect>
-     <x>290</x>
-     <y>360</y>
+     <x>250</x>
+     <y>350</y>
      <width>22</width>
      <height>58</height>
     </rect>
@@ -230,7 +234,7 @@ QPushButton:hover
     <enum>Qt::Vertical</enum>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>80</x>
