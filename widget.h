@@ -27,17 +27,13 @@ private slots:
 
     void on_pushButton_11_clicked();
 
-
-
     void on_listWidget_doubleClicked(const QModelIndex &index);
+
+    void on_volumeSlider_sliderMoved(int position);
 
 
 
     void on_pushButton_12_clicked();
-
-
-
-    void on_volumeSlider_sliderMoved(int position);
 
 private:
     Ui::Widget *ui;

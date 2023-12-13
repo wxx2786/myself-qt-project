@@ -17,7 +17,7 @@ Widget::Widget(QWidget *parent)
     //创建媒体播放对象
     mediaPlayer=new QMediaPlayer(this);
     mediaPlayer->setAudioOutput(audioOutput);
-
+    ui->volumeSlider->hide();
     //mediaPlayer->setSource(QUrl::fromPercentEncoding(""));
     //获取当前媒体的时长 通过信号关联获取
     connect(mediaPlayer,&QMediaPlayer::durationChanged,this,[=](qint64 duration)
@@ -65,15 +65,18 @@ void Widget::on_pushButton_10_clicked()
     switch (mediaPlayer->playbackState()) {
     case QMediaPlayer::PlaybackState::StoppedState:
     {   curPlayIndex=ui->listWidget->currentRow();
+        ui->pushButton_10->setStyleSheet("QPushButton{""icon: url(:/assert/playing.png);""}");
         mediaPlayer->setSource(playList[curPlayIndex]);
         mediaPlayer->play();
         break;
     }
     case QMediaPlayer::PlaybackState::PlayingState:
+        ui->pushButton_10->setStyleSheet("QPushButton{""icon: url(:/assert/pause.png);""}");
         mediaPlayer->pause();
         break;
 
     case QMediaPlayer::PlaybackState::PausedState:
+        ui->pushButton_10->setStyleSheet("QPushButton{""icon: url(:/assert/playing.png);""}");
         mediaPlayer->play();
         break;
 
@@ -112,20 +115,22 @@ void Widget::on_listWidget_doubleClicked(const QModelIndex &index)
 
 
 
-void Widget::on_volumeSlider_valueChanged(int value)
+
+
+void Widget::on_volumeSlider_sliderMoved(int position)
 {
-    audioOutput->setVolume(float(value/100));
+    audioOutput->setVolume(float(position));
 }
+
+
 
 
 void Widget::on_pushButton_12_clicked()
 {
-    //audioOutput->setMuted();
-}
-
-
-void Widget::on_volumeSlider_rangeChanged(int min, int max)
-{
-
+    if(ui->volumeSlider->isHidden()){
+        ui->volumeSlider->show();
+    }else{
+        ui->volumeSlider->hide();
+    }
 }
 
