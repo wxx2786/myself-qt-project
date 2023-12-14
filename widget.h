@@ -35,6 +35,8 @@ private slots:
 
     void on_pushButton_12_clicked();
 
+    void on_pushButton_8_clicked();
+
 private:
     Ui::Widget *ui;
     QList<QUrl>playList;

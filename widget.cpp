@@ -17,14 +17,16 @@ Widget::Widget(QWidget *parent)
     //创建媒体播放对象
     mediaPlayer=new QMediaPlayer(this);
     mediaPlayer->setAudioOutput(audioOutput);
+    audioOutput->setVolume(0.0);
     ui->volumeSlider->hide();
+    ui->listWidget_2->hide();
     //mediaPlayer->setSource(QUrl::fromPercentEncoding(""));
     //获取当前媒体的时长 通过信号关联获取
     connect(mediaPlayer,&QMediaPlayer::durationChanged,this,[=](qint64 duration)
             {
         ui->totalLabel->setText(QString("%1:%2").arg(duration/1000/60,2,10,QChar('0')).arg(duration/1000%60,2,10,QChar('0')));
         ui->playCourseSlider->setRange(0,duration);
-        //ui->volumeSlider->setRange(0.0,100.00);
+        ui->volumeSlider->setRange(0.0,100.00);
             });
 
     //获取当前播放时间
@@ -35,6 +37,7 @@ Widget::Widget(QWidget *parent)
 
     //拖到滑块，让音乐播放进度改变
     connect(ui->playCourseSlider,&QSlider::sliderMoved,mediaPlayer,&QMediaPlayer::setPosition);
+    //connect(ui->volumeSlider,&QSlider::sliderMoved,audioOutput,&QAudioOutput::setVolume);
 
 }
 
@@ -87,10 +90,13 @@ void Widget::on_pushButton_10_clicked()
 //上一曲
 void Widget::on_pushButton_9_clicked()
 {
-    curPlayIndex=(curPlayIndex-1)%playList.size();
+    if(curPlayIndex-1<0) curPlayIndex=playList.size()-1;
+    else
+        curPlayIndex=(curPlayIndex-1)%playList.size();
     ui->listWidget->setCurrentRow(curPlayIndex);
     mediaPlayer->setSource(playList[curPlayIndex]);
     mediaPlayer->play();
+    //ui->listWidget_2->addItem(playList[curPlayIndex]);
 }
 
 //下一曲
@@ -101,6 +107,7 @@ void Widget::on_pushButton_11_clicked()
     ui->listWidget->setCurrentRow(curPlayIndex);
     mediaPlayer->setSource(playList[curPlayIndex]);
     mediaPlayer->play();
+    //ui->listWidget_2->addItem(playList[curPlayIndex]);
 }
 
 
@@ -119,7 +126,7 @@ void Widget::on_listWidget_doubleClicked(const QModelIndex &index)
 
 void Widget::on_volumeSlider_sliderMoved(int position)
 {
-    audioOutput->setVolume(float(position));
+    audioOutput->setVolume(float(position)/100);
 }
 
 
@@ -131,6 +138,16 @@ void Widget::on_pushButton_12_clicked()
         ui->volumeSlider->show();
     }else{
         ui->volumeSlider->hide();
+    }
+}
+
+
+void Widget::on_pushButton_8_clicked()
+{
+    if(ui->listWidget_2->isHidden()){
+        ui->listWidget_2->show();
+    }else{
+        ui->listWidget_2->hide();
     }
 }
 
